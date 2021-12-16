@@ -4,29 +4,42 @@ import os, sys       # do not use any other imports/libraries
 def bn(b):
     # b - bytes to encode as integer
     # your implementation here
-    return i
+    return int(str(b), 2)
 
-def nb(i, length):
+def nb(i, length=None):
     # i - integer to encode as bytes
-    # length - specifies in how many bytes the number should be encoded
+    # length - specifies in-how many bytes the number should be encoded
     # your implementation here
-    b = b''
-    while(i>0):
-            x=(i&255) #take last 8 bits
-            i=i>>8  #move bits to right
-            b=bytes([x])+b
+    # b = b''
+    # while(i>0):
+    #         x=(i&255) #take last 8 bits
+    #         i=i>>8  #move bits to right
+    #         b=bytes([x])+b
+    
+    # Implementation
+    b = bin(i)
+    
+    # Removing first two elements
+    b = b[2:]
     return b
 
 def encrypt(pfile, kfile, cfile):
     # your implementation here
-    # nolasa plain
-    # baitu array -> int (bn function)
-    # plain garums baitos un uzģenerē tikpat garu key (os.urandom())
-    # baitu array -> int (bn function)
-    # cypertext_int = plain_int ^ key_int
-    # c_int -> byte array un ierakstam failaa
-    # key baitu array ierakstam failā
-    # cyphertexta baitys array - > failā
+    # Read plain text
+    
+    # byte array -> int (use bn function)
+    
+    # plain text bit length and generate the same length key (os.urandom())
+    
+    # byte array -> int (use bn function)
+    
+    # ciphertext_int = plain_int ^ key_int
+    
+    # ciphertext_int -> byte array and write in file
+    
+    # key byte array write in file
+    
+    # ciphertext byte array write in file
     pass
 
 def decrypt(cfile, kfile, pfile):
